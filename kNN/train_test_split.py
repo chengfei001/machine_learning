@@ -9,10 +9,11 @@ from sklearn.neighbors import KNeighborsClassifier
 logging.basicConfig(level=logging.INFO)
 
 iris = datasets.load_iris()
-''' Desc dict_keys(['data', 'target', 'target_names', 'DESCR', 'feature_names', 'filename'])'''
+'''Desc dict_keys(['data', 'target', 'target_names', 'DESCR', 'feature_names', 'filename'])'''
 X = iris.data
 y = iris.target
 
+'''练习测试'''
 # shuffle_indexes = np.random.permutation(len(X))
 # logging.info(shuffle_indexes)
 #
@@ -30,11 +31,11 @@ y = iris.target
 
 X_train, X_test, y_train, y_test = train_test_split(X, y)
 
-logging.info(X_train.shape)
-logging.info(X_train.shape)
-logging.info("-------------")
-logging.info(X_test.shape)
-logging.info(y_test.shape)
+# logging.info(X_train.shape)
+# logging.info(X_train.shape)
+# logging.info("-------------")
+# logging.info(X_test.shape)
+# logging.info(y_test.shape)
 
 neigh = KNeighborsClassifier(n_neighbors=3)
 neigh.fit(X_train, y_train)
