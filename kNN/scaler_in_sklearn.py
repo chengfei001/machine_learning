@@ -1,7 +1,11 @@
 import logging
-import numpy as np
 from sklearn.model_selection import train_test_split
+
+'''sklearn preprcoessing'''
 from sklearn.preprocessing import StandardScaler
+
+'''自定义算法'''
+# from kNN.preprocessing import StandardScaler
 from sklearn import datasets
 from sklearn.neighbors import KNeighborsClassifier
 
@@ -35,5 +39,6 @@ knn_clf = KNeighborsClassifier(n_neighbors=3)
 knn_clf.fit(X_train_standard, y_train)
 # 归一化数据准确度百分比
 logging.info(knn_clf.score(X_test_standard, y_test))
-# 错误方法，没有做归一化的数据分类准确度百分比
+'''# 错误方法，没有做归一化的数据分类准确度百分比
 logging.info(knn_clf.score(X_test, y_test))
+'''
