@@ -7,6 +7,7 @@ from sklearn.model_selection import  train_test_split
 from LinearRegresson.metrics import mean_squared_error
 from LinearRegresson.metrics import root_mean_squared_error
 from LinearRegresson.metrics import mean_absolute_error
+from LinearRegresson.metrics import r2_score
 import math
 import sklearn.metrics
 
@@ -61,6 +62,12 @@ logging.info('sklearn_rmse_test:%f', sklearn_rmse_test)
 # sklearn MAE
 sklearn_mae_test = sklearn.metrics.mean_absolute_error(y_test, y_predict)
 logging.info('sklearn_mae_test:%f', sklearn_mae_test)
+
+logging.info(1 - mean_squared_error(y_test, y_predict) / np.var(y_test))
+
+r2_score = r2_score(x_test, y_test)
+
+logging.info('r2_score:%f', reg.score(x_test, y_test))
 
 
 
